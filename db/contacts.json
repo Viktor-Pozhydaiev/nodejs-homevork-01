@@ -1,21 +1,9 @@
 [
   {
-    "id": "1",
-    "name": "Allen Raymond",
-    "email": "nulla.ante@vestibul.co.uk",
-    "phone": "(992) 914-3792"
-  },
-  {
     "id": "2",
     "name": "Chaim Lewis",
     "email": "dui.in@egetlacus.ca",
     "phone": "(294) 840-6685"
-  },
-  {
-    "id": "3",
-    "name": "Kennedy Lane",
-    "email": "mattis.Cras@nonenimMauris.net",
-    "phone": "(542) 451-7038"
   },
   {
     "id": "4",
@@ -58,5 +46,23 @@
     "name": "Alec Howard",
     "email": "Donec.elementum@scelerisquescelerisquedui.net",
     "phone": "(748) 206-2688"
+  },
+  {
+    "id": "75dc1e97-cbed-4320-a597-a7cbea1a8148",
+    "name": "Mango",
+    "email": "mango@gmail.com",
+    "phone": "322-22-22"
+  },
+  {
+    "id": "9b32899c-29c4-4928-93a1-c8492e3a4692",
+    "name": "Viktor",
+    "email": "cucumber@gmail.com",
+    "phone": "254-587-66"
+  },
+  {
+    "id": "941e1370-5aa3-4087-8ab6-8160872b94ea",
+    "name": "Allen Raymond",
+    "email": "nulla.ante@vestibul.co.uk",
+    "phone": "(992) 914-3792"
   }
 ]

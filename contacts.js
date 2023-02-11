@@ -1,6 +1,7 @@
 // Розкоментуйте і запиши значення
 const path = require("path");
 const fs = require("fs/promises");
+const { v4 } = require("uuid");
 
 const contactsPath = path.resolve("./db/contacts.json");
 
@@ -19,19 +20,36 @@ const getContactById = async (contactId) => {
   try {
     const data = await fs.readFile(contactsPath);
     const contacts = JSON.parse(data);
-    const result = contacts.filter((item) => item.id === contactId);
-    return console.log(result);
+    const contact = contacts.find((item) => item.id === contactId);
+    if (!contact) {
+      throw new Error(`Contact with id=${contactId} not found!`);
+    }
+    return console.log(contact);
   } catch (error) {
     console.error(error);
   }
 };
 
 const removeContact = async (contactId) => {
-  // ...твій код
+  const data = await fs.readFile(contactsPath);
+  const contacts = JSON.parse(data);
+  const findIdx = contacts.findIndex((item) => item.id === contactId);
+  if (findIdx === -1) {
+    return null;
+  }
+  const deletedContact = contacts.filter((_, index) => index !== findIdx);
+
+  await fs.writeFile(contactsPath, JSON.stringify(deletedContact));
+  return console.log(contacts[findIdx]);
 };
 
 const addContact = async (name, email, phone) => {
-  // ...твій код
+  const newContact = { id: v4(), name, email, phone };
+  const data = await fs.readFile(contactsPath);
+  const contacts = JSON.parse(data);
+  contacts.push(newContact);
+  await fs.writeFile(contactsPath, JSON.stringify(contacts));
+  return console.log(newContact);
 };
 
 module.exports = {
